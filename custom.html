@@ -21,7 +21,95 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="name">Please enter your name</label>
+                <input type="text" required> <br>
+                <label for="email">Please enter your email address</label>
+                <input type="email" required><br>
+                <label for="phone">Please enter you telephone number</label>
+                <input type="number">
+            </fieldset>
+            <fieldset>
+                <legend>Custom Art Specifications</legend>
+                <label for="art_selection">What type of custom art would you like?</label>
+                <select name="art_selection" id="">
+                    <option value="">--Please select--</option>
+                    <option value="wall_art">Wall Art</option>
+                    <option value="sculpture">Sculpture</option>
+                    <option value="home_decore">Home Decor</option>
+                    <option value="other">Other</option>
+                </select><br>
+                <label for="dimentions">Please provide the desired dimensions (Height x Width x Depth in inches/cm)</label>
+                <input type="text" placeholder="e.g 12x12x4 inches or 30x30x10 cm"> <br>
+                <label for="color_select">Please select your prefered color palette</label>
+                <input type="text" name="" id="">
+                <input type="color" name="" id=""><br>
+                <label for="theme">Do you have any themes or design inspirations for this piece?</label>
+                <input type="text" name="theme" id="" placeholder="e.g.nature, modern, abstract"><br>
+                <label for="materials">Are there any specific material you would like to include in the artwork?</label><br>
+                <input type="checkbox" name="marbel" id="">
+                <label for="marbel">Marbel</label><br>
+                <input type="checkbox" name="glass" id="">
+                <label for="glass">Glass</label><br>
+                <input type="checkbox" name="metal" id="">
+                <label for="metal">Metal Inlays</label><br>
+                <input type="checkbox" name="" id="">
+                <label for="other">Other</label>
+                <input type="text" name="" id="">
+            </fieldset>
+            <fieldset>
+                <legend>Personalization Options</legend>
+                <label for="special_text">Would you like any text or personalized message included in the design?</label><br>
+                <input type="text" placeholder="e.g. family name, quote, date"><br>
+                <label for="complexity">Please select the level of detail/complexity for your custom piece</label>
+                <select name="complexity" id="">
+                    <option value="">--Please select--</option>
+                    <option value="simple">Simple</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="highly detailed">Highly Detailed</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Delivery Preferences</legend>
+                <label for="deadline">Do you have a specific date by which you need the piece? (Note: Rush orders may incur additional fees)</label>
+                <input type="date" name="" id=""><br>
+                <label for="delivery">Choose your prefered delivery method:</label><br>
+                <input type="radio" name="delivery" id="">
+                <label for="standard">Standard Shipping</label><br>
+                <input type="radio" name="delivery" id="">
+                <label for="express">Express Shipping</label><br>
+                <input type="radio" name="delivery" id="">
+                <label for="local">Local Pickup</label><br>
+                <label for="address">Delivery address</label>
+                <input type="text" name="" id="">
+            </fieldset>
+            <fieldset>
+                <legend>Budget Range</legend>
+                <label for="budget">Please indicate your budget for the custom piece</label>
+                <select name="budget" id="">
+                    <option value="">--Please Select--</option>
+                    <option value="below_100"> Below N$ 100</option>
+                    <option value="100-250"> N$ 100-N$ 250</option>
+                    <option value="250-500"> N$ 250-N$500</option>
+                    <option value="500-1000"> N$ 500- N$1000</option>
+                    <option value="above_1000"> Above N$ 1000</option>
+                </select><br>
+                <label for="quote">Based on your selections, your estimated price is :</label>
+                <output>N$: </output>
+            </fieldset>
+            <fieldset>
+                <legend>Additional Comments</legend>
+                <label for="additional">Is there anything else you'd like us to know about your custom order?</label><br>
+                <input type="text" class="additional_info"><br>
+                <label for="design">Upload design</label>
+                <input type="file" id="design">
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
     <footer>
         <div class="footer">Address: 123 Art Lane, Creative City, 56789 Windhoek © 2024 Clay Station 7. All rights reserved.
         </div>
