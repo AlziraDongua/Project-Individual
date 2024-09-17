@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Order</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        fieldset{
+            margin:1%
+        }
+        legend{
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        input,label,select{
+            margin: 7px;
+        }
+        #form_title{
+            text-align: center;
+            font-size: 2rem;
+            font-style: italic;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            
+            animation: typing 3s steps(25) ;
+        }
+        @keyframes typing {
+      from { width: 0; }
+      to { width: 25ch; }
+    }
+
+    /* Cursor blinking animation */
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    </style>
 </head>
 <body>
     <header>
@@ -23,6 +55,7 @@
     </header>
     <main>
         <form action="">
+            <p id="form_title">Place Your Custom Order</p>
             <fieldset>
                 <legend>Contact Information</legend>
                 <label for="name">Please enter your name</label>
@@ -42,6 +75,8 @@
                     <option value="home_decore">Home Decor</option>
                     <option value="other">Other</option>
                 </select><br>
+                <label for="quantity">Quantity</label>
+                <input type="text" id="quantity"> <br>
                 <label for="dimentions">Please provide the desired dimensions (Height x Width x Depth in inches/cm)</label>
                 <input type="text" placeholder="e.g 12x12x4 inches or 30x30x10 cm"> <br>
                 <label for="color_select">Please select your prefered color palette</label>

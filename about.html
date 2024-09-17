@@ -20,6 +20,63 @@
                  </ul>
             </nav>
         </div>
+        <style>
+            #toggleSwitch {
+            display: none;
+            }
+
+            /* Button styling */
+            label {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            }
+
+            label:hover {
+            background-color: #45a049;
+            }
+
+            /* Styling for images */
+            .container {
+            text-align: center;
+        
+            }
+
+            img {
+            margin:auto;
+            max-width: 100%;
+            height: auto;
+            display: none;
+            text-align: center;
+            }
+
+            /* Show the first image by default */
+            #image1 {
+            display: block;
+            }
+
+            /* When checkbox is checked, show the second image and hide the first one */
+            #toggleSwitch:checked ~ .container #image1 {
+            display: none;
+            }
+
+            #toggleSwitch:checked ~ .container #image2 {
+            display: block;
+            }
+            #about, #crafting, #finishing{
+                display: block;
+                margin-top: 3.5rem;
+            }
+            .story{
+                display:flex;
+            }
+            
+        </style>
     </header>
     <main>
         <section class="about-us">
@@ -28,13 +85,13 @@
             <!-- Our Story Section -->
             <section class="our-story">
                 <h2>Our Story</h2>
-                <p>
+                <div class="story">
+                <p>Welcome to Clay Station 7, your go-to destination for handcrafted decorative cement art. We are a family-owned business driven by creativity, passion, and a deep sense of purpose. Founded with a desire to bring custom art into people's homes, we've grown into a business that proudly serves over 30 loyal customers. Our unique creations add a personal touch to various special occasions, turning concrete into beautiful expressions of art.
                     Clay Station 7 was born out of a deep passion for art, creativity, and the beauty of craftsmanship. Founded in 2022, our journey began with a simple mission: to transform cement, a material often associated with cold, industrial environments, into something that radiates warmth, artistry, and personality.
+                    From humble beginnings in a small studio, we have grown into a dedicated team of artisans who take pride in creating one-of-a-kind decorative pieces. Each item we craft is a testament to our commitment to quality, creativity, and the belief that art should be accessible to everyone.With each piece we create, our goal is to inspire, to beautify, and to share the story of what it means to create with purpose. We take pride in the relationships we've built with our customers and continue to strive for service and quality that exceed expectations.
                 </p>
-                <p>
-                    From humble beginnings in a small studio, we have grown into a dedicated team of artisans who take pride in creating one-of-a-kind decorative pieces. Each item we craft is a testament to our commitment to quality, creativity, and the belief that art should be accessible to everyone.
-                </p>
-                <div class="handart"><img src="Pictures/handheart.png" alt="Founder working on a cement sculpture" ></div>
+                <img id="about" src="Pictures/aboutus.png" width="17%" height="auto" alt="artist painting">
+                </div>
             </section>
 
             <!-- The Creative Process Section -->
@@ -47,14 +104,26 @@
                     <div class="step">
                         <h3>Step 1: Conceptualization</h3>
                         <p>We start by understanding your vision. Whether it's a custom order or a new collection, we work closely with you to conceptualize the design, ensuring it aligns with your style and preferences.</p>
+                        <input type="checkbox" id="toggleSwitch">
+
+                        <!-- Label acts as a button to toggle the checkbox -->
+                        <label for="toggleSwitch">Click me</label>
+
+                        <!-- Image container -->
+                        <div class="container">
+                            <img id="image1" src="Pictures/Bulboff.png" width="50%" height="auto" alt="First Image">
+                            <img id="image2" src="Pictures/Bulbon.png" width="50%" height="auto" alt="Second Image">
+                        </div>
                     </div>
                     <div class="step">
                         <h3>Step 2: Crafting</h3>
                         <p>Our artisans then bring the design to life, carefully shaping and molding the cement to create intricate patterns and forms. This stage requires patience, skill, and an eye for detail.</p>
+                        <img id="crafting" src="Pictures/crafting.png" alt="">
                     </div>
                     <div class="step">
                         <h3>Step 3: Finishing Touches</h3>
                         <p>Finally, we add the finishing touches, including painting, polishing, and sealing. This ensures that each piece not only looks stunning but is also durable and long-lasting.</p>
+                        <img id="finishing" src="Pictures/finishing.png" alt="">
                     </div>
                 </div>
             </section>

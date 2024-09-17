@@ -1,51 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-        <div class="top">
+    <style>
+        body{
             
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="custom.html">Custom Order</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            /* background-image: url("Pictures/background.png" ); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            animation: slide 15s infinite;
+            transition: background-image 1s ease-in-out;
+        }
+        
+        .hero {
+            display:grid;
+            height: 100%;
+            width: 40%; 
+            background-color: rgb(141, 99, 116,0.3); /* Background color */
+            border: 2px solid #ccc; 
+            padding: 20px; 
+            margin-left: 0; 
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* Styling for the hero content */
+        .hero-content {
+            margin-bottom: 5%;
+        }
+
+        .slogan {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sub-text {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 7px;
+        }
+
+        /* Styling for the description */
+        .description {
+            font-size: 1rem;
+            margin-bottom: 10%;
+            text-align: justify;
+        }
+
+        /* Styling for the action buttons */
+        .action_buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .action_buttons button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #333;
+            color: white;
+            border: #333;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action_buttons button:hover {
+            background-color: #555;
+        }
+
+        @keyframes slide {
+            0% {
+                background-image: url("Pictures/background.png");
+            }
+            33.33% {
+                background-image: url("Pictures/background.png");
+            }
+            33.34% {
+                background-image: url("Pictures/background2.png");
+            }
+            66.66% {
+                background-image: url("Pictures/background2.png");
+            }
+            66.67% {
+                background-image: url("Pictures/background3.png");
+            }
+            100% {
+                background-image: url("Pictures/background3.png");
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="top">
+        <nav>
+             <ul >      
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="custom.html">Custom Order</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+             </ul>
+        </nav>
         </div>
+        
     </header>
     <main>
-        <div id="hero">
-            <div class="fig">
-                <div class="images"><img src="Pictures/bowlsflowers.jpg" width="50%" alt="Flower pots"></div>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="slogan">Turining cement into art</h2>
+                <p class="sub-text">Creations for Every Occasion</p>
             </div>
-        </div>
-        <p class="slogan">Turining cement into art</p>
-        <p class="slogan1">Creations for Every Occasion</p>
-        <div class="cta"><span id="cta1">Brows Gallery</span> <span id="cta2">Order custom piece</span></div>
-        <div>
-            <p class="description">At Clay Station 7, we bring your creative visions to life with handcrafted decorative
-                cement art. Each piece is custom-made, ensuring that your special occasions are adorned with unique,
-                personalized touches.</p>
-        </div>
-        <p class="testimonials">Customer Testimonials</p>
-
+            <div>
+                <p class="description">At Clay Station 7, we bring your creative visions to life with handcrafted decorative
+                    cement art. Each piece is custom-made, ensuring that your special occasions are adorned with unique,
+                    personalized touches.</p>
+            </div>
+            <div class="action_buttons">
+                <button>Browse Gallery</button>
+                <button>Shop</button>
+                <button>Order Custom piece</button>
+            </div>
+        </section>
     </main>
     <footer>
-        <div class="footer">Address: 123 Art Lane, Creative City, 56789 Windhoek © 2024 Clay Station 7. All rights
-            reserved.
+        <div class="footer">Address: 123 Art Lane, Creative City, 56789 Windhoek © 2024 Clay Station 7. All rights reserved.
         </div>
     </footer>
+    
 </body>
-
 </html>

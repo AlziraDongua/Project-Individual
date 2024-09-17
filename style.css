@@ -19,6 +19,11 @@ width: 100%;
 padding: 1.5%;
 background-color: rgb(214, 211,204);
 }
+
+header{
+    /* position: fixed; */
+    width: 100%;
+}
 nav ul{
     display:flex;
     flex-direction:row;
@@ -27,7 +32,9 @@ nav ul{
 }
 
 
+
 #hero{
+    
 background-color: rgb(141, 99, 116);
 height:20%;
 width:100%;
@@ -41,6 +48,8 @@ align-items: center;
 }
 
 .fig {
+    width: 60%;
+    height:auto;
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -138,9 +147,9 @@ h1, h2 {
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
-.step:hover {
+/* .step:hover {
     transform: translateY(-0.3125rem); /* 5px */
-}
+/* }  */
 .step h3 {
     color: #333;
     margin-bottom: 1.5rem;
@@ -174,9 +183,9 @@ h1, h2 {
     transition: transform 0.3s ease;
 }
 
-.member:hover {
+/* .member:hover {
     transform: translateY(-0.3125rem); /* 5px */
-}
+/* } */ 
 
 .member h3 {
     color: #333;
@@ -204,6 +213,7 @@ p {
 }
 main {
     padding: 5% 2%;
+    z-index: 2;
 }
 
 .art-piece img{

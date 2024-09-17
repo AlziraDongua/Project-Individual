@@ -1,45 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+       
+        /* Container for the entire carousel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: auto; /* Full screen height */
+            overflow: hidden;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(185,164,137);
+            
+        }
+
+        /* The container holding the images and text */
+        .carousel-slides {
+            display: flex;
+            width: 300%; /* Three slides in a row */
+            height: auto;
+            animation: slide 12s infinite;
+            align-items: center;
+
+        }
+
+        /* Each individual slide */
+        .carousel-slide {
+            width: 100%;
+            height: auto;
+            flex: 1 0 100%;
+            position: relative;
+        }
+
+        /* Image should cover the entire slide */
+        .carousel-slide img {
+            width: 25%;
+            height: auto;
+            object-fit: cover;
+            border: 5px;
+ 
+        }
+
+        /* Text overlay on the image */
+        .carousel-text {
+            margin: auto;
+            /* position: absolute; */
+            align-items: center;
+            color: #fff;
+            font-size: 1rem;
+            font-style: italic;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 5px 5px;
+            border-radius: 8px;
+            max-width: 50%;
+        }
+
+        /* Keyframes for the slide animation */
+        @keyframes slide {
+            0% { transform: translateX(0); }          /* Show first slide */
+            25% { transform: translateX(0); }         /* Pause on first slide */
+            33% { transform: translateX(-100%); }     /* Transition to second slide */
+            58% { transform: translateX(-100%); }     /* Pause on second slide */
+            66% { transform: translateX(-200%); }     /* Transition to third slide */
+            91% { transform: translateX(-200%); }     /* Pause on third slide */
+            100% { transform: translateX(0); }        /* Loop back to first slide */
+        }
+        #hero{
+                display: flex;
+            }
+            .fig{
+                width: 20%;
+            }
+           
+    </style>
 </head>
+
 <body>
-    <header> 
+    <header>
         <div class="top">
-        <nav>
-             <ul >      
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="custom.html">Custom Order</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="contact.html">Contact</a></li>
-             </ul>
-        </nav>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="custom.html">Custom Order</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <main>
-        <h1>Gallery</h1>
-
-        <div class="art-piece">
-            <img src="Pictures/jewels.jpg" alt="Abstract Concrete Sculpture" class="art-image left">
-            <div class="art-info right">
-                <h2>Abstract Concrete Sculpture</h2>
-                <p><strong>Description:</strong> A modern abstract sculpture made from eco-friendly cement, designed to add a touch of sophistication to any space.</p>
-                <p><strong>Price:</strong> $120</p>
-                <p><strong>Color:</strong> Slate Gray</p>
-                <p><strong>Dimensions:</strong> 18" x 24" x 10"</p>
+        <div class="theTop">
+            <div id="hero">
+                <div id="ClayStation">Clay Station 7</div>
+                <div class="fig">
+                    <div class="images"><img src="Pictures/bowlsflowers.jpg" width="50%" alt="Flower pots"></div>
+                </div>
+            </div>
+        </div>
+        <p class="slogan">Turining cement into art</p>
+        <p class="slogan1">Creations for Every Occasion</p>
+        <div class="cta"><span id="cta1">Browse Gallery</span> <span id="cta2">Custom Order</span></div>
+        <div>
+            <p class="description">At Clay Station 7, we bring your creative visions to life with handcrafted decorative
+                cement art. Each piece is custom-made, ensuring that your special occasions are adorned with unique,
+                personalized touches.</p>
+        </div>
+        <p class="testimonials">Customer Testimonials</p>
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <!-- First Slide -->
+                <div class="carousel-slide">
+                    <img src="Pictures/namegwen.jpg"  alt="First Image">
+                    <div class="carousel-text">
+                        My desk has never looked more beautiful with my custom name stand by ClayStation7 
+                                ~ Gwen Pieters
+    
+                    </div>
+                </div>
+    
+                <!-- Second Slide -->
+                <div class="carousel-slide">
+                    <img src="Pictures/21stwhite.jpg" alt="Second Image">
+                    <div class="carousel-text">
+                        I am very happy with this unique art piece ~ Ebenezer
+                    </div>
+                </div>
+    
+                <!-- Third Slide -->
+                <div class="carousel-slide">
+                    <img src="Pictures/jewels.jpg" alt="Third Image">
+                    <div class="carousel-text">
+                        I really appreciate the ClayStation7 team for making this beautiful and unique jewelry ~ Cindy
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Pictures/21stgold.jpg" width="25%" height="auto" alt="First Image">
+                    <div class="carousel-text">
+                        Welcome to Clay Station 7 - Where Creativity Meets Concrete Art
+                    </div>
+                </div>
             </div>
         </div>
 
     </main>
     <footer>
-        <div class="footer">Address: 123 Art Lane, Creative City, 56789 Windhoek © 2024 Clay Station 7. All rights reserved.
+        <div class="footer">Address: 123 Art Lane, Creative City, 56789 Windhoek © 2024 Clay Station 7. All rights
+            reserved.
         </div>
     </footer>
-    
 </body>
+
 </html>
