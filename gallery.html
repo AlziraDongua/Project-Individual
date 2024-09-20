@@ -77,9 +77,93 @@
                 display: flex;
             }
 
-        .fig{
-                width: 20%;
-            }
+            h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 10%;
+        }
+
+        .art-piece {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .art-piece:hover {
+            transform: translateY(-5px);
+        }
+
+        .art-piece img {
+            width: 100%;
+            height: auto;
+            border-color: rgb(184,35,95);
+            border-radius: 0%;
+        }
+
+        .art-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .art-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .art-description {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color:rgb(83,83,87);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #elephant{
+            float: left;
+            border: solid 5px;
+            border-color: rgb(184,35,95);
+            margin-right: 2.5%;
+            
+        }
+
+        .gallery-item{
+            content:"";
+            display:block;
+            clear: both;
+            margin-left: 7%;
+            margin-right: 7%;
+            margin-top: 2%;
+        }
+        .gallery-item p{
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        .gallery{
+            margin-top: 7%;
+        }
+        .gallery-item h3{
+            font-size: 1.5rem;
+        }
+
            
     </style>
 </head>
@@ -87,37 +171,67 @@
 <body>
     <header>
         <div class="top">
+            <div class="clay_station_logo">Clay Station 7</div>
+            <div class="search">
+                <input class="searching" placeholder="Search for products..." /><button class="search_button" type="submit">Search</button>
+            </div>
+            <div class="cart_icon"><a href="#"><img class="cart" src="Pictures/cart-icon.png" width="30px" alt="Shopping Cart" /></div>
             
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="custom.html">Custom Order</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <nav>
+             <ul >      
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About&nbsp;Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="custom.html">Custom&nbsp;Order</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+             </ul>
+        </nav>
         </div>
+        
     </header>
     <main>
-        <!-- <div class="theTop">
-            <div id="hero">
-                <div id="ClayStation">Clay Station 7</div>
-                <div class="fig">
-                    <div class="images"><img src="Pictures/bowlsflowers.jpg" width="50%" alt="Flower pots"></div>
-                </div>
+
+        <h2>Our Latest Summer Collections</h2>
+
+    <div class="gallery-container">
+
+        <!-- Art Piece 1 -->
+        <div class="art-piece">
+            <img src="Pictures/gift3.png" alt="Art Piece 1">
+            <div class="art-details">
+                <h2 class="art-title">Sea Shell Collection</h2>
+                <p class="art-description">Ocean themed Collection</p>
+                <p>N$ 320.00</p>
+                <a href="#" class="add-to-cart">Add to Cart</a>
             </div>
         </div>
-        <p class="slogan">Turining cement into art</p>
-        <p class="slogan1">Creations for Every Occasion</p>
-        <div class="cta"><span id="cta1">Browse Gallery</span> <span id="cta2">Custom Order</span></div>
-        <div>
-            <p class="description">At Clay Station 7, we bring your creative visions to life with handcrafted decorative
-                cement art. Each piece is custom-made, ensuring that your special occasions are adorned with unique,
-                personalized touches.</p>
-        </div> -->
-        <p class="testimonials">Customer Testimonials</p>
+
+        <!-- Art Piece 2 -->
+        <div class="art-piece">
+            <img src="Pictures/wedding4.png" alt="Art Piece 2">
+            <div class="art-details">
+                <h2 class="art-title">Gold and White center piece</h2>
+                <p class="art-description">Stunning royal themed Collection</p>
+                <p>N$ 625.00</p>
+                <a href="#" class="add-to-cart">Add to Cart</a>
+            </div>
+        </div>
+
+        <!-- Art Piece 3 -->
+        <div class="art-piece">
+            <img src="Pictures/gift4.png" alt="Art Piece 3">
+            <div class="art-details">
+                <h2 class="art-title">Spiral Peach Deco Collection</h2>
+                <p class="art-description">New Summer best seller collection</p>
+                <p>N$ 850.00</p>
+                <a href="#" class="add-to-cart">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+  
+        <h2 class="testimonials">Customer Testimonials</h2>
         <div class="carousel-container">
             <div class="carousel-slides">
                 <!-- First Slide -->
@@ -153,6 +267,21 @@
                 </div>
             </div>
         </div>
+
+        <section class="gallery">
+            <!-- Article 1 -->
+             <h2>Featured Artwork</h2>
+            
+            <article class="gallery-item">
+                <h3>Clay Station 7 Triumphs at Designers' Competition</h3>
+                <img id="elephant" src="Pictures/elephant.jpg" width="35%" alt="Heart of the Desert">
+                <div class="content">
+                    <p>Clay Station 7 recently claimed the prestigious winning trophy at the national Designers' Competition for their extraordinary cement sculpture of a mother elephant and her baby. This powerful piece, which embodies the spirit of Namibia, captured the judges' attention for its intricate detail and profound symbolism.</p>
+                    <p>Elephants, iconic to the Namibian landscape, symbolize strength, family, and protection, mirroring the values of this vibrant nation. The sculpture was lauded not only for its artistic excellence but also for its deep connection to the country’s natural heritage.</p>
+                    <p>This masterpiece was showcased at the National Art Gallery of Namibia, where it drew widespread admiration from art lovers and visitors alike. The exhibition highlighted the creative prowess of Clay Station 7 and their ability to weave cultural narratives into their cement creations. This victory reinforces the team’s status as leaders in innovative, handcrafted decorative art.</p>
+                </div>
+            </article>
+        </section>
 
     </main>
     <footer>

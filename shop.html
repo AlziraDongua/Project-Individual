@@ -89,6 +89,17 @@
         .product-item .btn {
             margin-top: 10px;
         }
+        #p1{
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        h1{
+            font-size: 3rem;
+        }
+        .btn{
+            margin: auto;
+            display:block;
+        }
     </style>
 
 
@@ -96,21 +107,28 @@
 <body>
     <header>
         <div class="top">
-            <nav>
-                 <ul > 
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="custom.html">Custom Order</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
+            <div class="clay_station_logo">Clay Station 7</div>
+            <div class="search">
+                <input class="searching" placeholder="Search for products..." /><button class="search_button" type="submit">Search</button>
+            </div>
+            <div class="cart_icon"><a href="#"><img class="cart" src="Pictures/cart-icon.png" width="30px" alt="Shopping Cart" /></div>
+            
+        <nav>
+             <ul >      
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About&nbsp;Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="custom.html">Custom&nbsp;Order</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+             </ul>
+        </nav>
         </div>
+        
     </header>
     <main>
         <h1>Explore Our Handcrafted Cement Art Collection</h1>
-        <p>Browse our unique, one-of-a-kind decorative pieces made from cement. Each item is thoughtfully handcrafted to enhance your space.</p>
+        <p id="p1">Browse our unique, one-of-a-kind decorative pieces made from cement. Each item is thoughtfully handcrafted to enhance your space.</p>
         <button class="btn">Shop Now</button>
         <section class="shop-categories container">
             <h2 class="section-title">Shop by Category</h2>
@@ -322,6 +340,27 @@
                     <h4>Large heart flower pots</h4>
                     <p>Item code: W0027</p>
                     <div class="price">$680.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="Pictures/roundflowers.jpg" alt="Product Name">
+                    <h4>Circle flowerpot</h4>
+                    <p>Item code: W0028</p>
+                    <div class="price">$246.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="Pictures/vase.jpg" alt="Product Name">
+                    <h4>Textured vase</h4>
+                    <p>Item code: W0029</p>
+                    <div class="price">$412.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="Pictures/goldmarbel.jpg" alt="Product Name">
+                    <h4>Gold Marble flower pot</h4>
+                    <p>Item code: W0030</p>
+                    <div class="price">$516.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
             </div>

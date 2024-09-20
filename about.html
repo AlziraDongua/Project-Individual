@@ -5,83 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #toggleSwitch {
+        display: none;
+        }
+        .our-story h2{
+            text-align: left;
+            color: rgb(184, 35, 95);
+        }
+        #theStory{
+            margin-right: 5%;
+            text-align: justify;
+            font-size: 1.2rem;
+        }
+
+        .creative-process #p1{
+            font-style: italic;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 1.2rem;
+        }
+
+        /* Button styling */
+        label, .play-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        }
+
+        label:hover {
+        background-color: #45a049;
+        }
+
+        /* Styling for images */
+        .container {
+        text-align: center;
+    
+        }
+
+        .container img {
+        margin:auto;
+        max-width: 100%;
+        height: auto;
+        display: none;
+        text-align: center;
+        }
+
+        /* Show the first image by default */
+        #image1 {
+        display: block;
+        }
+
+        /* When checkbox is checked, show the second image and hide the first one */
+        #toggleSwitch:checked ~ .container #image1 {
+        display: none;
+        }
+
+        #toggleSwitch:checked ~ .container #image2 {
+        display: block;
+        }
+        #finishing{
+            display: block;
+            /* margin-top: 3.5rem; */
+        }
+        
+        
+        #about{
+            float: right;
+            padding-left: 10px;
+        }
+        .story::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+      
+        .our-story{
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color:rgb(141, 99, 116,0.2);
+            border:5%;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+        video{
+            width: 80%;
+            margin: auto;
+            display: flex;
+        }
+        #myVideo{
+            border:solid black 2px ;
+        }
+        
+    </style>
+
 </head>
 <body>
     <header>
         <div class="top">
-            <nav>
-                 <ul > 
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="custom.html">Custom Order</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
-        </div>
-        <style>
-            #toggleSwitch {
-            display: none;
-            }
-
-            /* Button styling */
-            label, .play-button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-            }
-
-            label:hover {
-            background-color: #45a049;
-            }
-
-            /* Styling for images */
-            .container {
-            text-align: center;
-        
-            }
-
-            img {
-            margin:auto;
-            max-width: 100%;
-            height: auto;
-            display: none;
-            text-align: center;
-            }
-
-            /* Show the first image by default */
-            #image1 {
-            display: block;
-            }
-
-            /* When checkbox is checked, show the second image and hide the first one */
-            #toggleSwitch:checked ~ .container #image1 {
-            display: none;
-            }
-
-            #toggleSwitch:checked ~ .container #image2 {
-            display: block;
-            }
-            #about, #crafting, #finishing{
-                display: block;
-                margin-top: 3.5rem;
-            }
-            .story{
-                display:flex;
-            }
-            video{
-                width: 80%;
-                margin: auto;
-                display: flex;
-            }
+            <div class="clay_station_logo">Clay Station 7</div>
+            <div class="search">
+                <input class="searching" placeholder="Search for products..." /><button class="search_button" type="submit">Search</button>
+            </div>
+            <div class="cart_icon"><a href="#"><img class="cart" src="Pictures/cart-icon.png" width="30px" alt="Shopping Cart" /></div>
             
-        </style>
+        <nav>
+             <ul >      
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About&nbsp;Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="custom.html">Custom&nbsp;Order</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+             </ul>
+        </nav>
+        </div>
+        
+        
     </header>
     <main>
         <section class="about-us">
@@ -91,17 +138,18 @@
             <section class="our-story">
                 <h2>Our Story</h2>
                 <div class="story">
-                    <p>Welcome to Clay Station 7, your go-to destination for handcrafted decorative cement art. We are a family-owned business driven by creativity, passion, and a deep sense of purpose. Founded with a desire to bring custom art into people's homes, we've grown into a business that proudly serves over 30 loyal customers. Our unique creations add a personal touch to various special occasions, turning concrete into beautiful expressions of art.
+                    <img id="about" src="Pictures/aboutus.png" width="30%" height="auto" alt="artist painting">
+                    <p id="theStory">Welcome to Clay Station 7, your go-to destination for handcrafted decorative cement art. We are a family-owned business driven by creativity, passion, and a deep sense of purpose. Founded with a desire to bring custom art into people's homes, we've grown into a business that proudly serves over 30 loyal customers. Our unique creations add a personal touch to various special occasions, turning concrete into beautiful expressions of art.
                         Clay Station 7 was born out of a deep passion for art, creativity, and the beauty of craftsmanship. Founded in 2022, our journey began with a simple mission: to transform cement, a material often associated with cold, industrial environments, into something that radiates warmth, artistry, and personality.
                         From humble beginnings in a small studio, we have grown into a dedicated team of artisans who take pride in creating one-of-a-kind decorative pieces. Each item we craft is a testament to our commitment to quality, creativity, and the belief that art should be accessible to everyone.With each piece we create, our goal is to inspire, to beautify, and to share the story of what it means to create with purpose. We take pride in the relationships we've built with our customers and continue to strive for service and quality that exceed expectations.
                     </p>
-                    <img id="about" src="Pictures/aboutus.png" width="17%" height="auto" alt="artist painting">
+                    
                 </div>
             </section>
 
             <section class="creative-process">
                 <h2>The Creative Process</h2>
-                <p>
+                <p id="p1">
                     At Clay Station 7, every piece of art we create is meticulously handcrafted. Our creative process is driven by a blend of traditional techniques and modern innovations, ensuring that each item we produce is not just a product, but a work of art.
                 </p>
                 <div class="process-steps">
@@ -120,10 +168,11 @@
                         <h3>Step 2: Crafting</h3>
                         <p>Our artisans then bring the design to life, carefully shaping and molding the cement to create intricate patterns and forms. This stage requires patience, skill, and an eye for detail.</p>
                         <div class="video-container">
+                            <button class="play-button" onclick="playVideo()">Play Video</button>
                             <video id="myVideo" controls>
                                 <source src="Pictures/craftingvid.mp4" type="video/mp4" >
                             </video>
-                            <button class="play-button" onclick="playVideo()">Play Video</button>
+                            
                         </div>
                         <script>
                             function playVideo() {
