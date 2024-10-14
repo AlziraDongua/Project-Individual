@@ -35,7 +35,8 @@ background-color: rgb(214, 211,204);
 .searching{
 width: 70%;
 padding: 2.5%;
-border-radius: 7px;
+border-top-left-radius: 7px;
+border-bottom-left-radius: 7px;
 }
 .search_button{
 padding: 2.5%;
