@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
         body {
             margin: 0;
@@ -86,51 +85,105 @@
             color: #333;
             margin: 10px 0;
         }
-        .product-item .btn {
-            margin-top: 10px;
+        .cart {
+            position: fixed;
+            right: 20px;
+            top: 90px;
+            width: 40px;
+            cursor: pointer;
         }
-        #p1{
+        .cart-items {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 150px;
+            width: 500px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-items h3 {
+            text-align: center;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item .item-name {
+            flex: 1;
+        }
+        .cart-item .item-price {
+            flex: 0.5;
+        }
+        .cart-item .remove-btn {
+            flex: 0.2;
+            background-color: red;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        
+        }
+        #p1 {
             font-size: 1.3rem;
             text-align: center;
         }
-        h1{
+        h1 {
             font-size: 3rem;
         }
-        .btn{
+        .btn {
             margin: auto;
-            display:block;
+            display: block;
         }
+        #total-price {
+            text-align: right;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        #purchase-btn, #clear-btn {
+            margin-top: 20px;
+            display: inline-flex;
+        }
+        #purchase-btn{
+           background-color: green;
+        }
+
+
     </style>
-
-
 </head>
 <body>
     <header>
         <div class="top">
             <div class="clay_station_logo">Clay Station 7</div>
-            <div class="search">
-                <input class="searching" placeholder="Search for products..." /><button class="search_button" type="submit">Search</button>
-            </div>
-            <div class="cart_icon"><a href="#"><img class="cart" src="Pictures/cart-icon.png" width="30px" alt="Shopping Cart" /></div>
-            
-        <nav>
-             <ul >      
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About&nbsp;Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="custom.html">Custom&nbsp;Order</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="contact.html">Contact</a></li>
-             </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About&nbsp;Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="custom.html">Custom&nbsp;Order</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        
+        <!-- Cart Icon -->
+       
     </header>
     <main>
+        <img class="cart" src="Pictures/cart-icon.png" alt="Shopping Cart">
+        <div class="cart-items">
+            <h3>Your Cart</h3>
+            <div id="cart-content"></div>
+            <div id="total-price">Total: $0.00</div>
+            <button class="btn" id="purchase-btn" onclick="purchaseItems()">Purchase</button>
+            <button class="btn" id="clear-btn" onclick="clearCart()">Clear Cart</button>
+        </div>
         <h1>Explore Our Handcrafted Cement Art Collection</h1>
         <p id="p1">Browse our unique, one-of-a-kind decorative pieces made from cement. Each item is thoughtfully handcrafted to enhance your space.</p>
-        <button class="btn">Shop Now</button>
-        <section class="shop-categories container">
+        <!-- <button class="btn">Shop Now</button> -->
+        <!-- <section class="shop-categories container">
             <h2 class="section-title">Shop by Category</h2>
             <div class="categories-grid">
                 <div class="category-item">
@@ -145,47 +198,39 @@
                     <img src="Pictures/namenadia.jpg" alt="Gift items">
                     <h3>Gift Items</h3>
                 </div>
-               
             </div>
-        </section>
-    
+        </section> -->
+
         <!-- Product Listing Section -->
         <section class="product-listing container">
             <h2 class="section-title">Browse All Products</h2>
             <div class="products-grid">
                 <div class="product-item">
-                    <img src="Pictures/wedding1.png" alt="Product Name">
+                    <img src="Pictures/wedding1.png" alt="Tear-drop Flower-pot">
                     <h4>Tear-drop Flower-pot</h4>
-                    <p>Item code: W001.</p>
+                    <p>Item code: W001</p>
                     <div class="price">N$300.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/wedding2.png" alt="Product Name">
-                    <h4>Flower vase Pair</h4>
-                    <p>Item code: W002</p>
-                    <div class="price">$475.00</div>
-                    <button class="btn">Add to Cart</button>
+                    <button class="btn" onclick="addToCart('Tear-drop Flower-pot', 300)">Add to Cart</button>
                 </div>
                 <div class="product-item">
                     <img src="Pictures/jewels.jpg" alt="Product Name">
                     <h4>Cement Jewellery box</h4>
                     <p>Item code: W003</p>
-                    <div class="price">$320.00</div>
+                    <div class="price">N$320.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
                     <img src="Pictures/4hearts.png" alt="Product Name">
                     <h4>Plain hearts </h4>
                     <p>Item code: W004</p>
-                    <div class="price">$50.00</div>
+                    <div class="price">N$50.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
                     <img src="Pictures/cup.jpg" alt="Product Name">
                     <h4>Flower pot mug</h4>
                     <p>Item code: W005</p>
-                    <div class="price">$178.00</div>
+                    <div class="price">N$178.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
@@ -195,49 +240,7 @@
                     <div class="price">$215.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
-                <div class="product-item">
-                    <img src="Pictures/deco1.png" alt="Product Name">
-                    <h4>Tall folwer pot</h4>
-                    <p>Item code: W007</p>
-                    <div class="price">$220.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/deco2.png" alt="Product Name">
-                    <h4>Triangular flower pots</h4>
-                    <p>Item code: W008</p>
-                    <div class="price">$192.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/dove.png" alt="Product Name">
-                    <h4>Dove</h4>
-                    <p>Item code: W009</p>
-                    <div class="price">$394.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/gift1.png" alt="Product Name">
-                    <h4>Geometric mug</h4>
-                    <p>Item code: W0010</p>
-                    <div class="price">$146.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/gift2.png" alt="Product Name">
-                    <h4>Petal flower pot</h4>
-                    <p>Item code: W0011</p>
-                    <div class="price">$320.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/gift3.png" alt="Product Name">
-                    <h4>Shell flower pots</h4>
-                    <p>Item code: W0012</p>
-                    <div class="price">$320.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
+                <div class="product-item" id="Spiral_Peach_Doco_Collection">
                     <img src="Pictures/gift4.png" alt="Product Name">
                     <h4>Spiral Peach Doco Collection</h4>
                     <p>Item code: W0013</p>
@@ -245,132 +248,117 @@
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
-                    <img src="Pictures/gift5.png" alt="Product Name">
-                    <h4>Wedding Couple Collection</h4>
-                    <p>Item code: W0014</p>
-                    <div class="price">$682.00</div>
+                    <img src="Pictures/dove.png" alt="Product Name">
+                    <h4>Dove</h4>
+                    <p>Item code: W009</p>
+                    <div class="price">N$394.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
-                <div class="product-item">
-                    <img src="Pictures/gift6.png" alt="Product Name">
-                    <h4>Oval flower pot</h4>
-                    <p>Item code: W0015</p>
-                    <div class="price">$134.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/gift7.png" alt="Product Name">
-                    <h4>Gold leaf flower pots</h4>
-                    <p>Item code: W0016</p>
-                    <div class="price">$120.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/goldbowl.png" alt="Product Name">
-                    <h4>Gold flower pots</h4>
-                    <p>Item code: W0017</p>
-                    <div class="price">$285.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/hearts.jpg" alt="Product Name">
-                    <h4>Heart</h4>
-                    <p>Item code: W0018</p>
-                    <div class="price">$50.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/parents.jpg" alt="Product Name">
-                    <h4>Parent-day Deco</h4>
-                    <p>Item code: W0019</p>
-                    <div class="price">$220.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/pot.jpg" alt="Product Name">
-                    <h4>Pyramid flower pot</h4>
-                    <p>Item code: W0020</p>
-                    <div class="price">$164.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/table.jpg" alt="Product Name">
-                    <h4>Gold center piece</h4>
-                    <p>Item code: W0021</p>
-                    <div class="price">$372.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
+                <div class="product-item" id="Gold_and_White_center_piece">
                     <img src="Pictures/wedding4.png" alt="Product Name">
-                    <h4></h4>
+                    <h4>Gold and White center piece</h4>
                     <p>Item code: W0022</p>
                     <div class="price">$420.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
-                <div class="product-item">
-                    <img src="Pictures/wedding5.png" alt="Product Name">
-                    <h4>Heart Stands</h4>
-                    <p>Item code: W0023</p>
-                    <div class="price">$280.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/wedding6.png" alt="Product Name">
-                    <h4>Circle flower stand</h4>
-                    <p>Item code: W0024</p>
-                    <div class="price">$280.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/wedding7.png" alt="Product Name">
-                    <h4>Heart candle holder</h4>
-                    <p>Item code: W0025</p>
-                    <div class="price">$186.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/wedding8.png" alt="Product Name">
-                    <h4>ILU flower pots</h4>
-                    <p>Item code: W0026</p>
-                    <div class="price">$420.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="Pictures/wedding9.png" alt="Product Name">
-                    <h4>Large heart flower pots</h4>
-                    <p>Item code: W0027</p>
-                    <div class="price">$680.00</div>
+                
+                <div class="product-item" id="Sea_Shell_Collection">
+                    <img src="Pictures/gift3.png" alt="Product Name">
+                    <h4>Sea Shell Collection</h4>
+                    <p>Item code: W0012</p>
+                    <div class="price">N$320.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
                     <img src="Pictures/roundflowers.jpg" alt="Product Name">
                     <h4>Circle flowerpot</h4>
                     <p>Item code: W0028</p>
-                    <div class="price">$246.00</div>
+                    <div class="price">N$246.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
                     <img src="Pictures/vase.jpg" alt="Product Name">
                     <h4>Textured vase</h4>
                     <p>Item code: W0029</p>
-                    <div class="price">$412.00</div>
+                    <div class="price">N$412.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
                 <div class="product-item">
                     <img src="Pictures/goldmarbel.jpg" alt="Product Name">
                     <h4>Gold Marble flower pot</h4>
                     <p>Item code: W0030</p>
-                    <div class="price">$516.00</div>
+                    <div class="price">N$516.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
+                
             </div>
         </section>
-
     </main>
-    <footer>
-        <div class="footer">Address: 123 Art Lane, Creative City, 56789 Windhoek © 2024 Clay Station 7. All rights reserved.
-        </div>
-    </footer>
-    
+
+    <script>
+        let cart = [];
+
+function addToCart(productName, productPrice) {
+    const cartItem = { name: productName, price: productPrice };
+    cart.push(cartItem);
+    updateCart();
+    alert(`${productName} has been added to your cart.`);
+}
+
+function updateCart() {
+    const cartContent = document.getElementById('cart-content');
+    cartContent.innerHTML = ''; // Clear previous cart content
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+        cartContent.innerHTML += `
+            <div class="cart-item">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price">N$${item.price.toFixed(2)}</div>
+                <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+            </div>`;
+        totalPrice += item.price;
+    });
+
+    document.getElementById('total-price').innerText = `Total: N$${totalPrice.toFixed(2)}`;
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function clearCart() {
+    cart = [];
+    updateCart();
+}
+
+function purchaseItems() {
+    if (cart.length > 0) {
+        alert('Thank you for your purchase!');
+        clearCart();
+    } else {
+        alert('Your cart is empty.');
+    }
+}
+
+// Attach event listener to all "Add to Cart" buttons
+document.querySelectorAll('.product-item .btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const productItem = event.target.closest('.product-item');
+        const productName = productItem.querySelector('h4').innerText;
+        const productPrice = parseFloat(productItem.querySelector('.price').innerText.replace('N$', ''));
+        addToCart(productName, productPrice);
+    });
+});
+
+document.querySelector('.cart').addEventListener('click', () => {
+    const cartItems = document.querySelector('.cart-items');
+    cartItems.style.display = cartItems.style.display === 'none' ? 'block' : 'none';
+});
+
+updateCart(); // Initialize the cart display
+
+    </script>
 </body>
 </html>

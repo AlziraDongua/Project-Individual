@@ -7,14 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <style>
         fieldset{
-            margin:1%
+            margin:1%;
+            border-color: rgb(184, 35, 95);
+            
         }
         legend{
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            color: rgb(184, 35, 95);
         }
         input,label,select{
             margin: 7px;
+        }
+        #submit-btn{
+            padding: 10px;
+            color: white;
+            background-color: rgb(131, 18, 112);
         }
         #form_title{
             text-align: center;
@@ -42,10 +50,10 @@
     <header>
         <div class="top">
             <div class="clay_station_logo">Clay Station 7</div>
-            <div class="search">
+            <!-- <div class="search">
                 <input class="searching" placeholder="Search for products..." /><button class="search_button" type="submit">Search</button>
             </div>
-            <div class="cart_icon"><a href="#"><img class="cart" src="Pictures/cart-icon.png" width="30px" alt="Shopping Cart" /></div>
+            <div class="cart_icon"><a href="#"><img class="cart" src="Pictures/cart-icon.png" width="30px" alt="Shopping Cart" /></div> -->
             
         <nav>
              <ul >      
@@ -149,7 +157,7 @@
                 <label for="design">Upload design</label>
                 <input type="file" id="design">
             </fieldset>
-            <input type="submit" value="Submit">
+            <input id="submit-btn" type="submit" value="Submit">
         </form>
     </main>
     <footer>
